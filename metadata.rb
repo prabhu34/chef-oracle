@@ -1,6 +1,6 @@
 name             'oracle'
-maintainer       'YOUR_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Léonard TAVAE'
+maintainer_email 'leonard.tavae@informatique.gov.pf'
 license          'All rights reserved'
 description      'Installs/Configures oracle'
 long_description 'Installs/Configures oracle'
