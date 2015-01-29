@@ -6,4 +6,6 @@ description 'Installs/Configures oracle'
 long_description 'Installs/Configures oracle'
 version '0.1.0'
 
-depends 'yum-epel'
+depends 'yum'
+depends 'sysctl', '0.6.2'
+depends 'limits'

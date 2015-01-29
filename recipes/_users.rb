@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: oracle
-# Recipe:: default
+# Recipe:: _users
 #
 # Copyright (C) 2015 Leonard TAVAE
 #
@@ -17,6 +17,25 @@
 # limitations under the License.
 #
 
-include_recipe 'oracle::_users'
-include_recipe 'oracle::_sysctl'
-include_recipe 'oracle::_limits'
+group 'dba' do
+  action :create
+  gid 1000
+end
+
+user 'oracle' do
+  action :create
+  comment 'Oracle user'
+  uid 1000
+  gid 'dba'
+  home '/home/oracle'
+  shell '/bin/bash'
+  password '$1$JJsvHslV$szsCjVEroftprNn4JHtDi.'
+  supports manage_home: true
+end
+
+template '/home/oracle/.profile' do
+  source 'oracle_profile.erb'
+  owner 'oracle'
+  group 'dba'
+  mode '0644'
+end

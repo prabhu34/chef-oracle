@@ -1,0 +1,14 @@
+export VISUAL=vi
+export EDITOR=/usr/bin/vi
+ENV=$HOME/.kshrc
+export ENV
+umask 022
+stty erase ^?
+export HOST=$(hostname)
+export PS1="$HOST:$PWD > "
+export PS2="$HOST:$(pwd) >> "
+export PS3="$HOST:$(pwd) == "
+ORACLE_BASE=/u01/app/oracle; export ORACLE_BASE
+export ORACLE_HOME=$ORACLE_BASE/product/10.2.0.4/db_1
+export PATH=$PATH:$HOME/bin:$ORACLE_HOME/bin
+unalias ls

@@ -28,5 +28,5 @@ suites:
     attributes:
       yum:
         epel:
-          enabled: true
+          enabled: false
       oracle:
